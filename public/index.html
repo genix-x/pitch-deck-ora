@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ORa – Opérateur Télécom Augmenté</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Reveal.js CSS -->
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/white.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <!-- Logo Ora fixe en haut à gauche -->
+  <img src="assets/logo-ora.png" alt="ORa Logo" class="ora-logo">
+  
+  <!-- Confidential Notice -->
+  <div class="confidential-notice">Document confidentiel – diffusion strictement limitée</div>
+  
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- SLIDE 1: VISION / TITLE -->
+      <section class="cover-slide" data-transition="fade">
+        <div class="cover-icon">
+          <i data-lucide="phone"></i>
+        </div>
+        <h1>ORa</h1>
+        <p class="subtitle">Opérateur Télécom Augmenté</p>
+        <div style="font-size: 1.5em; font-weight: 600; margin-top: 1em; color: var(--primary);">
+          "L'IA réalise. L'humain supervise."
+        </div>
+        <div style="margin-top: 2em;">
+          <div class="icon-box" style="font-size: 0.8em;">
+            <i data-lucide="globe"></i>
+            26 langues
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: PROBLEM -->
+      <section>
+        <span class="breadcrumb">Problem</span>
+        <h2>📞 La téléphonie n'a pas évolué depuis 20 ans</h2>
+
+        <div class="card-grid">
+          <div class="card">
+            <h4><i data-lucide="globe"></i> 🌍 Barrière linguistique</h4>
+            <ul>
+              <li><strong>Marché traduction : $50.02Bn</strong> (2024)</li>
+              <li>Traduction humaine : 0.80-2.50€/min</li>
+              <li><strong>73% des entreprises perdent des deals</strong> à cause de la langue</li>
+              <li>1.5 milliard de voyageurs/an avec barrière linguistique</li>
+            </ul>
+            <p class="muted" style="margin-top: 0.5em; font-size: 0.65em;">
+              Sources: <a href="https://www.straitsresearch.com" target="_blank">Straits Research 2024</a>, 
+              <a href="https://csa-research.com" target="_blank">CSA Research</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h4><i data-lucide="wrench"></i> 🔧 Complexité technique</h4>
+            <ul>
+              <li>Intégrations VoIP/CRM : <strong>4-12 semaines</strong></li>
+              <li>Maintenance infrastructure : <strong>2-5 ETP</strong></li>
+              <li>Stack fragmenté : <strong>5-8 outils différents</strong></li>
+              <li>Time-to-market produit voix : <strong>6-18 mois</strong></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4><i data-lucide="armchair"></i> 😫 Sédentarité & burn-out</h4>
+            <ul>
+              <li><strong>86% des employés >6h assis/jour</strong></li>
+              <li>Sédentarité : <strong>risque mortalité +2× vs tabac</strong></li>
+              <li><strong>Coût annuel : $67.5Bn</strong> (USA seul)</li>
+              <li>Baisse productivité : <strong>15-20%</strong></li>
+            </ul>
+            <p class="muted" style="margin-top: 0.5em; font-size: 0.65em;">
+              Sources: <a href="https://www.who.int" target="_blank">WHO 2024</a>, 
+              <a href="https://www.heart.org" target="_blank">American Heart Association</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h4><i data-lucide="eye-off"></i> 🔍 Management à l'aveugle</h4>
+            <ul>
+              <li><strong>Turnover commerciaux : 35%/an</strong></li>
+              <li>Coût remplacement : <strong>1.5-2× salaire annuel</strong></li>
+              <li><strong>68% des managers sans visibilité terrain</strong></li>
+              <li>Surveillance = désengagement équipes</li>
+            </ul>
+            <p class="muted" style="margin-top: 0.5em; font-size: 0.65em;">
+              Source: <a href="https://business.linkedin.com/talent-solutions" target="_blank">LinkedIn Talent Solutions 2024</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="highlight" style="margin-top: 1em;">
+          <p style="margin: 0;"><strong>💸 Impact financier global :</strong> Opportunités perdues ($1.2Tn/an) + Turnover ($500Bn/an) + Santé ($67Bn/an USA)</p>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: SOLUTION + 4 FRONTIÈRES -->
+      <section>
+        <span class="breadcrumb">Solution</span>
+        <h2>🚀 ORa = Opérateur Télécom Boosté à l'IA</h2>
+        <p style="font-size: 1.1em; margin-bottom: 1.5em;">Nous brisons 4 frontières :</p>
+
+        <div class="card-grid">
+          <div class="card" style="border-left: 4px solid var(--primary);">
+            <h4><i data-lucide="globe"></i> 1️⃣ LA LANGUE</h4>
+            <p>Traduction instantanée dans 26 langues</p>
+          </div>
+
+          <div class="card" style="border-left: 4px solid var(--secondary);">
+            <h4><i data-lucide="mic"></i> 2️⃣ LA COMPLEXITÉ</h4>
+            <p>Contrôle total à la voix (zéro interface)</p>
+          </div>
+
+          <div class="card" style="border-left: 4px solid var(--accent);">
+            <h4><i data-lucide="footprints"></i> 3️⃣ LA SÉDENTARITÉ</h4>
+            <p>Travail en mouvement (productivité + santé)</p>
+          </div>
+
+          <div class="card" style="border-left: 4px solid #00CC66;">
+            <h4><i data-lucide="users"></i> 4️⃣ LE MANAGEMENT</h4>
+            <p>IA coach qui forme et soutient sans surveiller</p>
+          </div>
+        </div>
+
+        <div class="feature-box" style="margin-top: 2em; text-align: center;">
+          <p style="margin: 0; font-size: 1.2em; font-weight: 600; color: var(--primary);">
+            <i data-lucide="zap"></i>
+            Une solution souveraine, sécurisée et scalable
+          </p>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: HERO FEATURE - ORA TRANSLATE -->
+      <section>
+        <span class="breadcrumb">Hero Feature</span>
+        <h2>🌍 Ora Translate</h2>
+        <p class="subtitle">La première IA qui traduit vos appels en temps réel</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin-bottom: 1.5em;">
+          <div>
+            <h3 style="font-size: 1.2em;">✅ Caractéristiques</h3>
+            <ul style="font-size: 0.85em; line-height: 1.8;">
+              <li><strong>26 langues</strong> supportées</li>
+              <li><strong>Voix ultra-naturelle</strong> (latence <500ms)</li>
+              <li><strong>–77% vs solutions traditionnelles</strong></li>
+              <li><strong>24/7 sans surcoût</strong></li>
+              <li><strong>Pay-as-you-go :</strong> 0.45€/min</li>
+              <li><strong>Plug & play</strong> sur toute infra VoIP</li>
+              <li><strong>Pause intelligente</strong> (touche "3")</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.2em;">💡 Use Cases Prioritaires</h3>
+            <ul style="font-size: 0.8em; line-height: 1.8;">
+              <li><strong>Call Centers Multilingues</strong><br>
+                <span class="muted">20-50 agents • Support international • Économie –77%</span></li>
+              <li><strong>Hôtels Internationaux</strong><br>
+                <span class="muted">Conciergerie 24/7 • Ex: Hôtel Sévigné (test Q1 2025)</span></li>
+              <li><strong>PME B2B Export</strong><br>
+                <span class="muted">Négociation commerciale • Prospection MENA/Asie</span></li>
+              <li><strong>Sécurité Voyageurs</strong><br>
+                <span class="muted">Urgences à l'étranger • Police, hôpital, ambassade</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-box">
+          <h4>📊 Benchmark vs Solutions Existantes</h4>
+          <table>
+            <tr>
+              <th>Solution</th>
+              <th>Coût/min</th>
+              <th>Latence</th>
+              <th>Langues</th>
+              <th>Disponibilité</th>
+            </tr>
+            <tr>
+              <td>Traducteur humain</td>
+              <td>0.80-2.50€</td>
+              <td>N/A</td>
+              <td>Variable</td>
+              <td>9h-18h</td>
+            </tr>
+            <tr>
+              <td>Google Translate API</td>
+              <td>0.30€</td>
+              <td>3-5s</td>
+              <td>133</td>
+              <td>24/7</td>
+            </tr>
+            <tr>
+              <td>DeepL Voice (2024)</td>
+              <td>0.60€</td>
+              <td>2-3s</td>
+              <td>31</td>
+              <td>24/7</td>
+            </tr>
+            <tr style="background: rgba(0, 102, 255, 0.1); font-weight: 600;">
+              <td><strong>Ora Translate</strong></td>
+              <td><strong>0.45€</strong></td>
+              <td><strong><0.5s</strong></td>
+              <td><strong>26</strong></td>
+              <td><strong>24/7</strong></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: FEATURE #2 - ORA COPILOT -->
+      <section>
+        <span class="breadcrumb">Feature #2</span>
+        <h2>🎧 Ora Copilot (BETA)</h2>
+        <p class="subtitle">L'IA coach qui réduit le turnover de 50% et accélère la montée en compétence</p>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; margin-bottom: 1.5em;">
+          <div class="card" style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 184, 212, 0.05) 100%);">
+            <h4><i data-lucide="book-open"></i> AVANT L'APPEL</h4>
+            <ul style="font-size: 0.75em;">
+              <li>Formation sur mesure</li>
+              <li>Réponses aux questions</li>
+              <li>Brief contextuel</li>
+              <li>Confiance ↑ 40%</li>
+            </ul>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, rgba(0, 184, 212, 0.05) 0%, rgba(0, 102, 255, 0.05) 100%);">
+            <h4><i data-lucide="headphones"></i> PENDANT L'APPEL</h4>
+            <ul style="font-size: 0.75em;">
+              <li>Chuchote infos clés</li>
+              <li>Suggère arguments temps réel</li>
+              <li>Alerte signaux d'achat</li>
+              <li>Comme un mentor</li>
+            </ul>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 184, 212, 0.05) 100%);">
+            <h4><i data-lucide="bar-chart"></i> APRÈS L'APPEL</h4>
+            <ul style="font-size: 0.75em;">
+              <li>Analyse performance</li>
+              <li>Objections récurrentes</li>
+              <li>Axes d'amélioration</li>
+              <li>Météo émotionnelle</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+          <div class="highlight">
+            <h4><i data-lucide="users"></i> Pour les Managers</h4>
+            <ul style="font-size: 0.8em;">
+              <li>Dashboard insights (anonymisés)</li>
+              <li>Identification besoins formation</li>
+              <li>Prédiction risque turnover</li>
+              <li>100% respectueux RGPD</li>
+            </ul>
+          </div>
+
+          <div class="highlight" style="background: linear-gradient(135deg, rgba(0, 204, 102, 0.08) 0%, rgba(0, 153, 255, 0.08) 100%); border-left-color: #00CC66;">
+            <h4><i data-lucide="trending-up"></i> Résultats Mesurables</h4>
+            <ul style="font-size: 0.8em;">
+              <li>Turnover réduit : <strong>–50%</strong></li>
+              <li>Montée en compétence : <strong>3-4 mois</strong> (vs 6-9)</li>
+              <li>Taux de conversion : <strong>+25-35%</strong></li>
+              <li>ROI : <strong>3-5× en 12 mois</strong></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: ECOSYSTEM - AUTRES AGENTS -->
+      <section>
+        <span class="breadcrumb">Ecosystem</span>
+        <h2>🤖 L'Écosystème d'Agents IA</h2>
+        <p style="font-size: 0.95em; margin-bottom: 1.5em;">Tout est interconnecté, orchestré, intelligent</p>
+
+        <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="card">
+            <h4><i data-lucide="cog"></i> Ora Build</h4>
+            <p>Créez vos agents IA à la voix<br>Du concept à la prod en minutes</p>
+          </div>
+
+          <div class="card">
+            <h4><i data-lucide="phone-forwarded"></i> Ora Relai</h4>
+            <p>Transfère l'appel à l'IA<br>RDV, info client, satisfaction</p>
+          </div>
+
+          <div class="card">
+            <h4><i data-lucide="users-round"></i> Multi-Agents</h4>
+            <p>Plusieurs rôles simultanés<br>Accueil, commercial, technique</p>
+          </div>
+
+          <div class="card">
+            <h4><i data-lucide="phone-incoming"></i> Ora Assist</h4>
+            <p>Appuyez sur 3 → l'IA rejoint<br>Info instantanée en plein appel</p>
+          </div>
+
+          <div class="card">
+            <h4><i data-lucide="file-text"></i> Ora Track</h4>
+            <p>Transcription + traduction live<br>Comptes rendus automatiques</p>
+          </div>
+
+          <div class="card">
+            <h4><i data-lucide="headset"></i> Ora Connect</h4>
+            <p>Centre d'appels augmenté<br>L'IA engage, l'humain conclut</p>
+          </div>
+        </div>
+
+        <div class="feature-box" style="margin-top: 2em; text-align: center;">
+          <p style="margin: 0; font-size: 1em; font-weight: 600;">
+            <i data-lucide="sparkles"></i>
+            Une plateforme complète pour orchestrer l'intelligence vocale
+          </p>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: MARKET SIZE -->
+      <section>
+        <span class="breadcrumb">Market Size</span>
+        <h2>📊 Un marché massif en forte croissance</h2>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">$50.02Bn</div>
+            <div class="stat-label">Marché mondial services de traduction (2024)</div>
+            <p class="muted" style="font-size: 0.7em; margin-top: 0.3em;">CAGR : 2.3% → $55.6Bn en 2032</p>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number">1.5Bn</div>
+            <div class="stat-label">Voyageurs internationaux/an</div>
+            <p class="muted" style="font-size: 0.7em; margin-top: 0.3em;">67% rapportent difficultés linguistiques</p>
+          </div>
+
+          <div class="stat">
+            <div class="stat-number">500k+</div>
+            <div class="stat-label">Agents call centers européens</div>
+            <p class="muted" style="font-size: 0.7em; margin-top: 0.3em;">Besoin critique traduction temps réel</p>
+          </div>
+        </div>
+
+        <div class="card-grid" style="margin-top: 2em;">
+          <div class="card" style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 184, 212, 0.05) 100%);">
+            <h4><i data-lucide="target"></i> TAM - Total Addressable Market</h4>
+            <p>Marché mondial traduction : $50.02Bn (2024)</p>
+            <p class="muted" style="font-size: 0.7em;">
+              Source: <a href="https://www.straitsresearch.com" target="_blank">Straits Research 2024</a>
+            </p>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, rgba(0, 184, 212, 0.05) 0%, rgba(0, 102, 255, 0.05) 100%);">
+            <h4><i data-lucide="focus"></i> SAM - Serviceable Addressable</h4>
+            <p>Téléphonie d'entreprise multilingue Europe + MENA : $8-12Bn</p>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.08) 0%, rgba(0, 184, 212, 0.08) 100%); border: 2px solid var(--primary);">
+            <h4><i data-lucide="crosshair"></i> SOM - Notre marché 3 ans</h4>
+            <p><strong>50 000 entreprises cibles</strong><br>ACV moyen : 12-30k€<br>Marché accessible : $600M-1.5Bn</p>
+          </div>
+        </div>
+
+        <div class="highlight" style="margin-top: 1.5em;">
+          <p style="margin: 0; font-size: 0.85em;"><strong>💡 Drivers de croissance :</strong> Globalisation commerce • Pénurie traducteurs humains • Explosion IA vocale (+150% adoption 2023-2024) • Remote work international</p>
+        </div>
+      </section>
+
+      <!-- SLIDE 8: TRACTION & PIPELINE -->
+      <section>
+        <span class="breadcrumb">Traction</span>
+        <h2>🚀 Traction Early - 100% Entrante</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1em; margin-bottom: 1.5em;">
+          <div class="card" style="border-left: 4px solid var(--primary);">
+            <h4><i data-lucide="hotel"></i> Hôtel Sévigné (Paris)</h4>
+            <p style="font-size: 0.8em; margin: 0.3em 0;">"Je t'ouvre le marché hôtelier parisien"</p>
+            <p style="font-size: 0.75em; margin: 0;"><strong>Test prévu Q1 2025 • ARR : 8-12k€</strong></p>
+          </div>
+
+          <div class="card" style="border-left: 4px solid var(--secondary);">
+            <h4><i data-lucide="building"></i> Clevermind (30M€ CA)</h4>
+            <p style="font-size: 0.8em; margin: 0.3em 0;">Prospection Allemagne depuis Tunisie</p>
+            <p style="font-size: 0.75em; margin: 0;"><strong>En cours • ARR : 40-80k€</strong></p>
+          </div>
+
+          <div class="card" style="border-left: 4px solid var(--accent);">
+            <h4><i data-lucide="phone"></i> ZIWO (Dubai)</h4>
+            <p style="font-size: 0.8em; margin: 0.3em 0;">Leader call centers GCC</p>
+            <p style="font-size: 0.75em; margin: 0;"><strong>RDV janvier • ARR : 150-300k€</strong></p>
+          </div>
+
+          <div class="card" style="border-left: 4px solid #00CC66;">
+            <h4><i data-lucide="cog"></i> A2I</h4>
+            <p style="font-size: 0.8em; margin: 0.3em 0;">CEO: "C'est l'avenir, on doit en parler"</p>
+            <p style="font-size: 0.75em; margin: 0;"><strong>Déjeuner prévu • ARR : 15-30k€</strong></p>
+          </div>
+
+          <div class="card" style="border-left: 4px solid #FF9800;">
+            <h4><i data-lucide="dumbbell"></i> MagicForm + 5 PME</h4>
+            <p style="font-size: 0.8em; margin: 0.3em 0;">Pilotes en cours</p>
+            <p style="font-size: 0.75em; margin: 0;"><strong>ARR : 20-40k€</strong></p>
+          </div>
+
+          <div class="highlight" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div class="stat-number" style="font-size: 2em;">230-460k€</div>
+            <div class="stat-label" style="text-align: center;">Pipeline ARR 6 mois</div>
+          </div>
+        </div>
+
+        <div class="feature-box" style="text-align: center;">
+          <p style="margin: 0; font-size: 1em; font-weight: 600; color: var(--primary);">
+            ✅ Signaux forts • 100% inbound • Validation product-market fit
+          </p>
+        </div>
+      </section>
+
+      <!-- SLIDE 9: BUSINESS MODEL + UNIT ECONOMICS -->
+      <section>
+        <span class="breadcrumb">Business Model</span>
+        <h2>💰 Business Model & Unit Economics</h2>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em;">
+          <div>
+            <h3 style="font-size: 1.2em;">📍 Revenus Multi-Stream</h3>
+            <ul style="font-size: 0.8em; line-height: 1.8;">
+              <li>Abonnement opérateur IA (29-99€/user/mois)</li>
+              <li>Pay-as-you-go Translate (0.45€/min)</li>
+              <li>Agents IA spécialisés (40-80€/agent/mois)</li>
+              <li>Licence entreprise (3-8k€/mois >100 users)</li>
+              <li>Pack Sécurité Voyageur (50€ crédit)</li>
+              <li>Upsell Ora Copilot (+30-50€/user/mois)</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.2em;">📊 Unit Economics (PME/ETI)</h3>
+            <div class="stats" style="flex-direction: column; gap: 1em;">
+              <div class="stat">
+                <div class="stat-number" style="font-size: 1.8em;">12-30k€</div>
+                <div class="stat-label">ACV (Annual Contract Value)</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number" style="font-size: 1.8em;">36-90k€</div>
+                <div class="stat-label">LTV (36 mois, churn 15%)</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number" style="font-size: 1.8em;">3-5k€</div>
+                <div class="stat-label">CAC (Customer Acquisition Cost)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-box" style="margin-top: 1em;">
+          <h4>📊 Benchmarks vs SaaS B2B</h4>
+          <table style="font-size: 0.8em;">
+            <tr>
+              <th>Métrique</th>
+              <th>ORa</th>
+              <th>Benchmark SaaS</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>LTV/CAC</td>
+              <td><strong>7-18:1</strong></td>
+              <td>>3:1</td>
+              <td>✅ Excellent</td>
+            </tr>
+            <tr>
+              <td>CAC Payback</td>
+              <td><strong>3-5 mois</strong></td>
+              <td><12 mois</td>
+              <td>✅ Top 10%</td>
+            </tr>
+            <tr>
+              <td>Gross Margin</td>
+              <td><strong>70-75%</strong></td>
+              <td>70%+</td>
+              <td>✅ Sain</td>
+            </tr>
+            <tr>
+              <td>Churn annuel</td>
+              <td><strong><15%</strong></td>
+              <td><20%</td>
+              <td>✅ Bon</td>
+            </tr>
+          </table>
+          <p style="font-size: 0.7em; margin-top: 0.5em;">
+            Sources : <a href="https://openviewpartners.com" target="_blank">OpenView 2024</a>, 
+            <a href="https://www.saas-capital.com" target="_blank">SaaS Capital 2024</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- SLIDE 10: GO-TO-MARKET -->
+      <section>
+        <span class="breadcrumb">Go-to-Market</span>
+        <h2>🎯 Stratégie Go-to-Market</h2>
+
+        <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="card" style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 184, 212, 0.05) 100%);">
+            <h4><i data-lucide="target"></i> PHASE 1 (0-6 mois)</h4>
+            <p style="font-weight: 600; margin-bottom: 0.5em;">VALIDATION</p>
+            <ul style="font-size: 0.75em;">
+              <li>Pilotes ciblés (hôtellerie, call centers)</li>
+              <li>Partenariats early (intégrateurs IT)</li>
+              <li>Traction entrante (SEO, LinkedIn)</li>
+            </ul>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, rgba(0, 184, 212, 0.05) 0%, rgba(0, 102, 255, 0.05) 100%);">
+            <h4><i data-lucide="rocket"></i> PHASE 2 (6-12 mois)</h4>
+            <p style="font-weight: 600; margin-bottom: 0.5em;">SCALE</p>
+            <ul style="font-size: 0.75em;">
+              <li>Outbound structuré (SDR)</li>
+              <li>Partenariats distributeurs (ZIWO, A2I)</li>
+              <li>Expansion MENA via Dubai</li>
+            </ul>
+          </div>
+
+          <div class="card" style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.08) 0%, rgba(0, 184, 212, 0.08) 100%); border: 2px solid var(--primary);">
+            <h4><i data-lucide="building"></i> PHASE 3 (12-18 mois)</h4>
+            <p style="font-weight: 600; margin-bottom: 0.5em;">INDUSTRIALISATION</p>
+            <ul style="font-size: 0.75em;">
+              <li>Marketplace partenaires</li>
+              <li>Vertical plays (tourisme, retail, healthcare)</li>
+              <li>Programme channel partners</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-box" style="margin-top: 1.5em;">
+          <h4><i data-lucide="megaphone"></i> Canaux Prioritaires</h4>
+          <div style="display: flex; gap: 1em; flex-wrap: wrap; justify-content: center;">
+            <div class="icon-box"><i data-lucide="mouse-pointer-click"></i> Inbound (SEO + LinkedIn)</div>
+            <div class="icon-box"><i data-lucide="handshake"></i> Partenariats intégrateurs</div>
+            <div class="icon-box"><i data-lucide="phone-outgoing"></i> Outbound ciblé (ICP défini)</div>
+            <div class="icon-box"><i data-lucide="calendar"></i> Events sectoriels</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 11: TEAM -->
+      <section>
+        <span class="breadcrumb">Team</span>
+        <h2>👥 L'Équipe</h2>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em; margin-bottom: 2em;">
+          <div class="card" style="border-left: 4px solid var(--primary);">
+            <h4><i data-lucide="user"></i> OUSAMA BEN YOUNES - CEO & Co-Founder</h4>
+            <ul style="font-size: 0.8em;">
+              <li>11 mois R&D agents IA vocaux</li>
+              <li>Expert télécom & architecture IA</li>
+              <li>Vision produit & exécution rapide</li>
+            </ul>
+          </div>
+
+          <div class="card" style="border-left: 4px solid var(--secondary);">
+            <h4><i data-lucide="terminal"></i> BRUNO ALIMELIE - CTO & Co-Founder</h4>
+            <ul style="font-size: 0.8em;">
+              <li>Expert systèmes distribués & temps réel</li>
+              <li>Infrastructure IA vocale</li>
+              <li>15+ ans développement</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card-grid" style="grid-template-columns: repeat(2, 1fr);">
+          <div class="highlight">
+            <h4><i data-lucide="coins"></i> Investisseurs</h4>
+            <ul style="font-size: 0.8em;">
+              <li>Love money engagé</li>
+              <li>Tour ouvert pour investisseurs amis</li>
+            </ul>
+          </div>
+
+          <div class="highlight" style="background: linear-gradient(135deg, rgba(0, 184, 212, 0.06) 0%, rgba(0, 102, 255, 0.06) 100%); border-left-color: var(--secondary);">
+            <h4><i data-lucide="graduation-cap"></i> Advisors</h4>
+            <ul style="font-size: 0.8em;">
+              <li>Expert télécom/VoIP</li>
+              <li>Ex-VP Sales SaaS</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 12: ASK -->
+      <section>
+        <span class="breadcrumb">Ask</span>
+        <h2>💰 Notre Demande</h2>
+
+        <div class="feature-box" style="text-align: center; padding: 2em; margin-bottom: 2em; background: linear-gradient(135deg, rgba(0, 102, 255, 0.08) 0%, rgba(0, 184, 212, 0.08) 100%); border: 3px solid var(--primary);">
+          <div style="font-size: 2.5em; font-weight: 700; color: var(--primary); margin-bottom: 0.3em;">400k€ pour 20%</div>
+          <p style="font-size: 1.1em; margin: 0;">Valorisation pre-money : 1.6M€ • Valorisation post-money : 2M€</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5em; margin-bottom: 2em;">
+          <div>
+            <h3 style="font-size: 1.2em;">🎯 Utilisation des Fonds (18 mois)</h3>
+            <div class="card" style="margin-bottom: 0.8em;">
+              <h4>40% → Tech & Product (160k€)</h4>
+              <ul style="font-size: 0.75em;">
+                <li>3 engineers (temps réel, IA, infra)</li>
+                <li>Accélération Ora Copilot</li>
+                <li>Certifications (ISO 27001, SOC2)</li>
+              </ul>
+            </div>
+
+            <div class="card" style="margin-bottom: 0.8em;">
+              <h4>30% → Go-to-Market (120k€)</h4>
+              <ul style="font-size: 0.75em;">
+                <li>1 SDR (outbound structuré)</li>
+                <li>Marketing digital (SEO, LinkedIn, events)</li>
+                <li>Partenariats & customer success</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h4>20% → Ops & Infrastructure (80k€)</h4>
+              <ul style="font-size: 0.75em;">
+                <li>Scaling infra cloud (Europe + MENA)</li>
+                <li>Legal & compliance (RGPD, télécom)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.2em;">🚀 Objectifs 18 Mois</h3>
+            <div class="stats" style="flex-direction: column; gap: 1em;">
+              <div class="stat">
+                <div class="stat-number" style="font-size: 1.8em;">20-30</div>
+                <div class="stat-label">Clients actifs</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number" style="font-size: 1.8em;">150-200</div>
+                <div class="stat-label">Agents IA déployés</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number" style="font-size: 1.8em; color: var(--secondary);">400-600k€</div>
+                <div class="stat-label">ARR (Scénario ambitieux : 800k-1M€)</div>
+              </div>
+            </div>
+
+            <div class="highlight" style="margin-top: 1em;">
+              <h4 style="font-size: 0.9em;"><i data-lucide="bar-chart-2"></i> Métriques Cibles</h4>
+              <ul style="font-size: 0.75em;">
+                <li>MRR mois 18 : 40-50k€</li>
+                <li>LTV/CAC maintenu >3:1</li>
+                <li>Gross margin : 70%+</li>
+                <li>Churn <15%/an</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-box" style="text-align: center;">
+          <p style="margin: 0;"><strong>🎯 Prochaine levée (Série A) :</strong> M18-24 • 2-3M€ • Valorisation : 10-15M€ • Scale Europe + US expansion</p>
+        </div>
+      </section>
+
+      <!-- SLIDE FINALE: MERCI -->
+      <section class="cover-slide">
+        <div class="cover-icon">
+          <i data-lucide="heart"></i>
+        </div>
+        <h1>Merci</h1>
+        <p class="subtitle">Questions & Réponses</p>
+        <div style="margin-top: 2em;">
+          <p style="font-size: 0.9em; color: var(--text-secondary);">
+            <strong>Contact :</strong><br>
+            Ousama Ben Younes - CEO<br>
+            contact@ora.ai
+          </p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js Scripts -->
+  <script src="dist/reveal.js"></script>
+  <script src="js/init.js"></script>
+</body>
+</html>
