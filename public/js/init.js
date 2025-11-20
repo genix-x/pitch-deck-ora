@@ -55,8 +55,26 @@ Reveal.on('ready', function() {
 });
 
 // Re-render icons after each slide change
-Reveal.on('slidechanged', function() {
+Reveal.on('slidechanged', function(event) {
   if (window.lucide) {
     lucide.createIcons();
+  }
+  
+  // Masquer le logo fixe sur la première slide
+  const logo = document.querySelector('.ora-logo');
+  if (logo) {
+    if (event.indexh === 0) {
+      logo.style.display = 'none';
+    } else {
+      logo.style.display = 'block';
+    }
+  }
+});
+
+// Masquer le logo sur la première slide au chargement
+Reveal.on('ready', function(event) {
+  const logo = document.querySelector('.ora-logo');
+  if (logo && event.indexh === 0) {
+    logo.style.display = 'none';
   }
 });
