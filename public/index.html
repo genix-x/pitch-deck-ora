@@ -312,7 +312,9 @@
           
           <!-- LEFT SIDE: PIE CHART -->
           <div style="display: flex; flex-direction: column; align-items: center; gap: 1em;">
-            <canvas id="marketPie" width="76" height="76"></canvas>
+            <div style="width: 100%; max-width: 400px; position: relative;">
+              <canvas id="marketPie"></canvas>
+            </div>
             
             <!-- LEGEND -->
             <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.7em; line-height: 1.5; color: var(--text-primary);">
@@ -400,6 +402,10 @@
                 options: {
                   responsive: true,
                   maintainAspectRatio: true,
+                  aspectRatio: 1,
+                  layout: {
+                    padding: 10
+                  },
                   plugins: {
                     legend: { display: false },
                     tooltip: {
