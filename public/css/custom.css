@@ -436,6 +436,132 @@ body:has(.reveal .slides section:first-child.present) .ora-logo {
   font-style: italic;
 }
 
+/* Market Size - Donut Chart Styles */
+.market-size-container {
+  margin: 2.5rem auto;
+  max-width: 780px;
+}
+
+.donut-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* DONUT */
+.donut-chart {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ffb83f 0deg 235deg,      /* 4.7B */
+    #3eb3ff 235deg 280deg,   /* 1.1B */
+    #15c784 280deg 360deg    /* 1.4B */
+  );
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.donut-chart:hover {
+  transform: scale(1.05);
+}
+
+.donut-chart::after {
+  content: "";
+  position: absolute;
+  inset: 25%;
+  border-radius: 50%;
+  background: white;
+}
+
+.center-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  z-index: 1;
+}
+
+.center-label span {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.center-label small {
+  opacity: 0.6;
+  font-size: 0.7rem;
+  margin-top: -4px;
+  font-weight: 500;
+}
+
+/* LEGEND */
+.donut-legend {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.donut-legend div {
+  display: flex;
+  align-items: center;
+  margin: 0.5em 0;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.dot-human { background: #ffb83f; }
+.dot-ai { background: #3eb3ff; }
+.dot-remote { background: #15c784; }
+
+/* TAM/SAM/SOM */
+.tam-sam-som {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.04) 0%, rgba(0, 184, 212, 0.04) 100%);
+  border-radius: 12px;
+  border: 1.5px solid rgba(0, 102, 255, 0.15);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.tam-sam-som div {
+  flex: 1;
+  text-align: center;
+}
+
+.tam-sam-som strong {
+  color: var(--primary);
+}
+
+/* Market Sources */
+.market-sources {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(0, 102, 255, 0.03);
+  border-radius: 8px;
+  border-left: 3px solid var(--primary);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .reveal section {
@@ -462,5 +588,20 @@ body:has(.reveal .slides section:first-child.present) .ora-logo {
     width: 80px;
     top: 20px;
     left: 20px;
+  }
+
+  .donut-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .donut-chart {
+    width: 200px;
+    height: 200px;
+  }
+
+  .tam-sam-som {
+    flex-direction: column;
+    gap: 0.8rem;
   }
 }

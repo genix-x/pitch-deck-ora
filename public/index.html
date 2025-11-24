@@ -19,6 +19,9 @@
 
   <!-- Lucide icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -37,6 +40,9 @@
         <p style="font-size: 1.8em; font-weight: 700; margin: 0.5em 0; color: var(--text-primary);">Opérateur Télécom Augmenté</p>
         <div style="font-size: 0.95em; font-weight: 600; margin-top: 1.5em; color: var(--primary);">
           "Révolutionner la téléphonie. Renforcer l'humain"
+        </div>
+        <div style="margin-top: 2em; text-align: center;">
+          <img src="assets/intro-image.png" alt="Intro Image" style="max-width: 400px; height: auto; opacity: 0.9;">
         </div>
       </section>
 
@@ -194,7 +200,6 @@
         <span class="breadcrumb">Feature #2</span>
         <div style="display: flex; align-items: baseline; gap: 1em; flex-wrap: wrap; margin-bottom: 1.5em;">
           <h2 style="margin: 0; display: inline;">🎧 Ora Copilot (BETA)</h2>
-          <p style="margin: 0; font-size: 1.3em; color: var(--text-muted); font-weight: 400;">L'IA coach qui accélère la montée en compétence</p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; margin-bottom: 1.5em;">
@@ -233,7 +238,7 @@
           <div class="highlight">
             <h4><i data-lucide="users"></i> Pour les Managers</h4>
             <ul style="font-size: 0.8em;">
-              <li>Dashboard insights (anonymisés)</li>
+              <li>Dashboard insights</li>
               <li>Identification besoins formation</li>
               <li>Prédiction risque turnover</li>
               <li>100% respectueux RGPD</li>
@@ -301,51 +306,115 @@
       <!-- SLIDE 7: MARKET SIZE -->
       <section>
         <span class="breadcrumb">Market Size</span>
-        <h2>📊 Un marché massif en forte croissance</h2>
+        <h2 style="margin-bottom: 1.5em;">📊 Market Size — Interprétation & Traduction Vocale (2024)</h2>
 
-        <div class="stats">
-          <div class="stat">
-            <div class="stat-number">$50.02Bn</div>
-            <div class="stat-label">Marché mondial services de traduction (2024)</div>
-            <p class="muted" style="font-size: 0.7em; margin-top: 0.3em;">CAGR : 2.3% → $55.6Bn en 2032</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em; align-items: start;">
+          
+          <!-- LEFT SIDE: PIE CHART -->
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 1em;">
+            <canvas id="marketPie" width="76" height="76"></canvas>
+            
+            <!-- LEGEND -->
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.7em; line-height: 1.5; color: var(--text-primary);">
+              <li style="display: flex; align-items: center; margin: 0.25em 0;">
+                <span style="background:#FFCE6A; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px;"></span> 
+                <strong>Interprétation humaine</strong> — ~4.7B$
+              </li>
+              <li style="display: flex; align-items: center; margin: 0.25em 0;">
+                <span style="background:#6AA9FF; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px;"></span> 
+                <strong>Speech-to-Speech AI</strong> — ~1.1B$
+              </li>
+              <li style="display: flex; align-items: center; margin: 0.25em 0;">
+                <span style="background:#63D2A2; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px;"></span> 
+                <strong>OPI/VRI Remote</strong> — ~1.4B$
+              </li>
+            </ul>
           </div>
 
-          <div class="stat">
-            <div class="stat-number">1.5Bn</div>
-            <div class="stat-label">Voyageurs internationaux/an</div>
-            <p class="muted" style="font-size: 0.7em; margin-top: 0.3em;">67% rapportent difficultés linguistiques</p>
+          <!-- RIGHT SIDE: TAM/SAM/SOM -->
+          <div style="display: flex; flex-direction: column; gap: 0.9em; justify-content: center;">
+            
+            <!-- TAM -->
+            <div style="
+              padding: 0.9em 1.2em;
+              background: linear-gradient(135deg, rgba(0, 102, 255, 0.08) 0%, rgba(0, 184, 212, 0.08) 100%);
+              border-left: 4px solid var(--primary);
+              border-radius: 6px;
+            ">
+              <div style="font-size: 0.55em; color: var(--text-muted); font-weight: 600; letter-spacing: 0.03em; margin-bottom: 0.15em;">TAM — TOTAL ADDRESSABLE MARKET</div>
+              <div style="font-size: 1.6em; font-weight: 700; color: var(--primary); margin-bottom: 0.05em;">$6–8B</div>
+              <div style="font-size: 0.6em; color: var(--text-secondary);">Marché mondial (2024)</div>
+            </div>
+
+            <!-- SAM -->
+            <div style="
+              padding: 0.9em 1.2em;
+              background: linear-gradient(135deg, rgba(0, 184, 212, 0.08) 0%, rgba(0, 102, 255, 0.08) 100%);
+              border-left: 4px solid var(--secondary);
+              border-radius: 6px;
+            ">
+              <div style="font-size: 0.55em; color: var(--text-muted); font-weight: 600; letter-spacing: 0.03em; margin-bottom: 0.15em;">SAM — SERVICEABLE ADDRESSABLE</div>
+              <div style="font-size: 1.6em; font-weight: 700; color: var(--secondary); margin-bottom: 0.05em;">$500–800M</div>
+              <div style="font-size: 0.6em; color: var(--text-secondary);">EU + MENA</div>
+            </div>
+
+            <!-- SOM -->
+            <div style="
+              padding: 0.9em 1.2em;
+              background: linear-gradient(135deg, rgba(0, 204, 102, 0.08) 0%, rgba(0, 153, 255, 0.08) 100%);
+              border-left: 4px solid #00CC66;
+              border-radius: 6px;
+            ">
+              <div style="font-size: 0.55em; color: var(--text-muted); font-weight: 600; letter-spacing: 0.03em; margin-bottom: 0.15em;">SOM — SERVICEABLE OBTAINABLE (3 ANS)</div>
+              <div style="font-size: 1.6em; font-weight: 700; color: #00CC66; margin-bottom: 0.05em;">$8–15M ARR</div>
+              <div style="font-size: 0.6em; color: var(--text-secondary);">Notre marché cible</div>
+            </div>
+
           </div>
 
-          <div class="stat">
-            <div class="stat-number">500k+</div>
-            <div class="stat-label">Agents call centers européens</div>
-            <p class="muted" style="font-size: 0.7em; margin-top: 0.3em;">Besoin critique traduction temps réel</p>
-          </div>
         </div>
 
-        <div class="card-grid" style="margin-top: 2em;">
-          <div class="card" style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 184, 212, 0.05) 100%);">
-            <h4><i data-lucide="target"></i> TAM - Total Addressable Market</h4>
-            <p>Marché mondial traduction : $50.02Bn (2024)</p>
-            <p class="muted" style="font-size: 0.7em;">
-              Source: <a href="https://www.straitsresearch.com" target="_blank">Straits Research 2024</a>
-            </p>
-          </div>
-
-          <div class="card" style="background: linear-gradient(135deg, rgba(0, 184, 212, 0.05) 0%, rgba(0, 102, 255, 0.05) 100%);">
-            <h4><i data-lucide="focus"></i> SAM - Serviceable Addressable</h4>
-            <p>Téléphonie d'entreprise multilingue Europe + MENA : $8-12Bn</p>
-          </div>
-
-          <div class="card" style="background: linear-gradient(135deg, rgba(0, 102, 255, 0.08) 0%, rgba(0, 184, 212, 0.08) 100%); border: 2px solid var(--primary);">
-            <h4><i data-lucide="crosshair"></i> SOM - Notre marché 3 ans</h4>
-            <p><strong>50 000 entreprises cibles</strong><br>ACV moyen : 12-30k€<br>Marché accessible : $600M-1.5Bn</p>
-          </div>
+        <!-- SOURCES (discrètes en bas) -->
+        <div style="position: absolute; bottom: 60px; left: 80px; right: 80px; font-size: 0.55em; opacity: 0.5; text-align: center; color: var(--text-muted);">
+          <strong>Sources:</strong> Grand View Research 2024 • MarketsandMarkets 2024 • Allied MR 2023 • ContactBabel • Eurostat
         </div>
 
-        <div class="highlight" style="margin-top: 1.5em;">
-          <p style="margin: 0; font-size: 0.85em;"><strong>💡 Drivers de croissance :</strong> Globalisation commerce • Pénurie traducteurs humains • Explosion IA vocale (+150% adoption 2023-2024) • Remote work international</p>
-        </div>
+        <script>
+          (function() {
+            const ctx = document.getElementById('marketPie');
+            if (ctx && typeof Chart !== 'undefined') {
+              new Chart(ctx, {
+                type: 'pie',
+                data: {
+                  labels: [
+                    'Interprétation humaine (~4.7B$)',
+                    'Speech-to-Speech AI (~1.1B$)',
+                    'OPI/VRI Remote (~1.4B$)'
+                  ],
+                  datasets: [{
+                    data: [4.7, 1.1, 1.4],
+                    backgroundColor: ['#FFCE6A', '#6AA9FF', '#63D2A2'],
+                    borderWidth: 0
+                  }]
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: true,
+                  plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                      callbacks: {
+                        label: function(context) {
+                          return context.label + " : " + context.raw + "B$";
+                        }
+                      }
+                    }
+                  }
+                }
+              });
+            }
+          })();
+        </script>
       </section>
 
       <!-- SLIDE 8: TRACTION & PIPELINE -->
@@ -434,45 +503,6 @@
           </div>
         </div>
 
-        <div class="feature-box" style="margin-top: 1em;">
-          <h4>📊 Benchmarks vs SaaS B2B</h4>
-          <table style="font-size: 0.8em;">
-            <tr>
-              <th>Métrique</th>
-              <th>ORa</th>
-              <th>Benchmark SaaS</th>
-              <th>Status</th>
-            </tr>
-            <tr>
-              <td>LTV/CAC</td>
-              <td><strong>7-18:1</strong></td>
-              <td>>3:1</td>
-              <td>✅ Excellent</td>
-            </tr>
-            <tr>
-              <td>CAC Payback</td>
-              <td><strong>3-5 mois</strong></td>
-              <td><12 mois</td>
-              <td>✅ Top 10%</td>
-            </tr>
-            <tr>
-              <td>Gross Margin</td>
-              <td><strong>70-75%</strong></td>
-              <td>70%+</td>
-              <td>✅ Sain</td>
-            </tr>
-            <tr>
-              <td>Churn annuel</td>
-              <td><strong><15%</strong></td>
-              <td><20%</td>
-              <td>✅ Bon</td>
-            </tr>
-          </table>
-          <p style="font-size: 0.7em; margin-top: 0.5em;">
-            Sources : <a href="https://openviewpartners.com" target="_blank">OpenView 2024</a>, 
-            <a href="https://www.saas-capital.com" target="_blank">SaaS Capital 2024</a>
-          </p>
-        </div>
       </section>
 
       <!-- SLIDE 10: GO-TO-MARKET -->
@@ -517,57 +547,13 @@
           <div style="display: flex; gap: 1em; flex-wrap: wrap; justify-content: center;">
             <div class="icon-box"><i data-lucide="mouse-pointer-click"></i> Inbound (SEO + LinkedIn)</div>
             <div class="icon-box"><i data-lucide="handshake"></i> Partenariats intégrateurs</div>
-            <div class="icon-box"><i data-lucide="phone-outgoing"></i> Outbound ciblé (ICP défini)</div>
+            <div class="icon-box"><i data-lucide="phone-outgoing"></i> Outbound ciblé </div>
             <div class="icon-box"><i data-lucide="calendar"></i> Events sectoriels</div>
           </div>
         </div>
       </section>
 
-      <!-- SLIDE 11: TEAM -->
-      <section>
-        <span class="breadcrumb">Team</span>
-        <h2>👥 L'Équipe</h2>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em; margin-bottom: 2em;">
-          <div class="card" style="border-left: 4px solid var(--primary);">
-            <h4><i data-lucide="user"></i> OUSAMA BEN YOUNES - CEO & Co-Founder</h4>
-            <ul style="font-size: 0.8em;">
-              <li>11 mois R&D agents IA vocaux</li>
-              <li>Expert télécom & architecture IA</li>
-              <li>Vision produit & exécution rapide</li>
-            </ul>
-          </div>
-
-          <div class="card" style="border-left: 4px solid var(--secondary);">
-            <h4><i data-lucide="terminal"></i> BRUNO ALIMELIE - CTO & Co-Founder</h4>
-            <ul style="font-size: 0.8em;">
-              <li>Expert systèmes distribués & temps réel</li>
-              <li>Infrastructure IA vocale</li>
-              <li>15+ ans développement</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card-grid" style="grid-template-columns: repeat(2, 1fr);">
-          <div class="highlight">
-            <h4><i data-lucide="coins"></i> Investisseurs</h4>
-            <ul style="font-size: 0.8em;">
-              <li>Love money engagé</li>
-              <li>Tour ouvert pour investisseurs amis</li>
-            </ul>
-          </div>
-
-          <div class="highlight" style="background: linear-gradient(135deg, rgba(0, 184, 212, 0.06) 0%, rgba(0, 102, 255, 0.06) 100%); border-left-color: var(--secondary);">
-            <h4><i data-lucide="graduation-cap"></i> Advisors</h4>
-            <ul style="font-size: 0.8em;">
-              <li>Expert télécom/VoIP</li>
-              <li>Ex-VP Sales SaaS</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- SLIDE 12: ASK -->
+      <!-- SLIDE 11: ASK -->
       <section>
         <span class="breadcrumb">Ask</span>
         <h2>💰 Notre Demande</h2>
@@ -577,7 +563,7 @@
           <p style="font-size: 1.1em; margin: 0;">Valorisation pre-money : 1.6M€ • Valorisation post-money : 2M€</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5em; margin-bottom: 2em;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin-bottom: 2em;">
           <div>
             <h3 style="font-size: 1.2em;">🎯 Utilisation des Fonds (18 mois)</h3>
             <div class="card" style="margin-bottom: 0.8em;">
@@ -585,7 +571,7 @@
               <ul style="font-size: 0.75em;">
                 <li>3 engineers (temps réel, IA, infra)</li>
                 <li>Accélération Ora Copilot</li>
-                <li>Certifications (ISO 27001, SOC2)</li>
+                <li>Certifications (SECURITE, RGPD)</li>
               </ul>
             </div>
 
@@ -615,24 +601,19 @@
                 <div class="stat-label">Clients actifs</div>
               </div>
               <div class="stat">
-                <div class="stat-number" style="font-size: 1.8em;">150-200</div>
-                <div class="stat-label">Agents IA déployés</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number" style="font-size: 1.8em; color: var(--secondary);">400-600k€</div>
-                <div class="stat-label">ARR (Scénario ambitieux : 800k-1M€)</div>
+                <div class="stat-number" style="font-size: 1.8em;">40-50k€</div>
+                <div class="stat-label" <li>MRR    </div>
               </div>
             </div>
 
-            <div class="highlight" style="margin-top: 1em;">
-              <h4 style="font-size: 0.9em;"><i data-lucide="bar-chart-2"></i> Métriques Cibles</h4>
-              <ul style="font-size: 0.75em;">
-                <li>MRR mois 18 : 40-50k€</li>
-                <li>LTV/CAC maintenu >3:1</li>
-                <li>Gross margin : 70%+</li>
-                <li>Churn <15%/an</li>
-              </ul>
-            </div>
+           
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; margin: 2em 0;">
+          <div class="stat" style="text-align: center;">
+            <div class="stat-number" style="font-size: 2.5em; color: var(--secondary);">400-600k€</div>
+            <div class="stat-label" style="font-size: 1.1em; font-weight: 600;">ARR (Scénario ambitieux : 800k-1M€)</div>
           </div>
         </div>
 
@@ -652,7 +633,7 @@
           <p style="font-size: 0.9em; color: var(--text-secondary);">
             <strong>Contact :</strong><br>
             Ousama Ben Younes - CEO<br>
-            contact@ora.ai
+            hello@getora.sh
           </p>
         </div>
       </section>
