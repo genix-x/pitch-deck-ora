@@ -1,5 +1,28 @@
 // ORa Pitch Deck - Reveal.js Initialization
 
+// Load external slides
+document.addEventListener('DOMContentLoaded', function() {
+  const externalSlides = document.querySelectorAll('section[data-external]');
+  
+  externalSlides.forEach(function(section) {
+    const url = section.getAttribute('data-external');
+    
+    fetch(url)
+      .then(response => response.text())
+      .then(html => {
+        section.innerHTML = html;
+        // Re-initialize icons after loading content
+        if (window.lucide) {
+          lucide.createIcons();
+        }
+      })
+      .catch(error => {
+        console.error('Error loading external slide:', error);
+        section.innerHTML = '<p>Error loading slide content</p>';
+      });
+  });
+});
+
 // Initialize Reveal.js
 Reveal.initialize({
   hash: true,
